@@ -4,7 +4,7 @@ from rest_framework import serializers
 
 from .models import Transaction, Bank, Account, Category
 
-
+# pylint: disable=C0115
 class BankSerializer(serializers.ModelSerializer):
     """ Bank Serializer """
 
@@ -28,6 +28,7 @@ class AccountSerializer(serializers.ModelSerializer):
             'id',
             'number',
             'agency',
+            'bank',
             'active',
             'actualization',
             'created',
@@ -64,3 +65,4 @@ class TransactionSerializer(serializers.ModelSerializer):
             'actualization',
             'created',
         )
+# pylint: enable=C0115

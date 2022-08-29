@@ -25,6 +25,10 @@ class Account(Base):
     """ Account Model """
     number = models.CharField(max_length=255, verbose_name='Number')
     agency = models.CharField(max_length=255, verbose_name='Agency')
+    bank = models.ForeignKey(Bank,on_delete=models.CASCADE, related_name='banks',blank=False)
+
+    def __str__(self):
+        return f'{self.bank} -> {self.number} : {self.agency}'
 
 
 class Category(Base):
