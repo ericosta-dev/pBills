@@ -45,6 +45,9 @@ class Category(Base):
 
 class Transaction(Base):
     """ Transaction Model """
+    account = models.ForeignKey(
+        Account, on_delete=models.CASCADE, related_name='transactions')
+
     INFLOW = 'IN'
     OUTFLOW = 'OUT'
 
@@ -58,8 +61,6 @@ class Transaction(Base):
         max_length=3, choices=TYPES, verbose_name='Type Payment')
     amount = models.DecimalField(
         max_digits=9, decimal_places=2, verbose_name='Amount')
-    account = models.ForeignKey(
-        Account, on_delete=models.CASCADE, related_name='accounts')
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name='categories')
 

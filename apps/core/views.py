@@ -16,14 +16,14 @@ from .serializers import (BankSerializer,
 # pylint: disable=E1101
 class BankAPIView(viewsets.ModelViewSet):
     """Bank API View"""
-    permission_classes = (IsAuthenticated, )
+    # permission_classes = (IsAuthenticated, )
     queryset = Bank.objects.filter(active=True)
     serializer_class = BankSerializer
 
 
 class AccountAPIView(viewsets.ModelViewSet):
     """Account API View"""
-    permission_classes = (IsAuthenticated, )
+    # permission_classes = (IsAuthenticated, )
     queryset = Account.objects.filter(active=True)
     serializer_class = AccountSerializer
 
@@ -37,13 +37,13 @@ class AccountAPIView(viewsets.ModelViewSet):
 
 class CategoryAPIView(viewsets.ModelViewSet):
     """Category API View"""
-    permission_classes = (IsAuthenticated, )
+    # permission_classes = (IsAuthenticated, )
     queryset = Category.objects.filter(active=True)
     serializer_class = CategorySerializer
 
 
 class TransactionAPIView(viewsets.ModelViewSet):
     """Transaction API View"""
-    permission_classes = (IsAuthenticated, )
+    # permission_classes = (IsAuthenticated, )
     queryset = Transaction.objects.filter(active=True)
     serializer_class = TransactionSerializer
